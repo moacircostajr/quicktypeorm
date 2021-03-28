@@ -1,0 +1,62 @@
+### ormconfig.json ###
+{
+   "type": "postgres",
+   "host": "localhost",
+   "port": 5432,
+   "username": "postgres",
+   "password": "postgres",
+   "database": "oni",
+   "synchronize": true,		// faz com que a modelagem fique sincronizada com as tabelas do banco
+   "logging": false,
+   "entities": [
+      "src/entity/**/*.ts"	// pasta que contém a modelagem
+   ],
+   "migrations": [
+      "src/migration/**/*.ts"	// pasta dos arquivos de migração
+   ],
+   "subscribers": [
+      "src/subscriber/**/*.ts"
+   ],
+   "cli": {			// configurações a serem usadas pela linha de comando
+      "entitiesDir": "src/entity",
+      "migrationsDir": "src/migration",
+      "subscribersDir": "src/subscriber"
+   }
+}
+
+
+/* CRIAR MIGRAÇÃO */
+$ yarn typeorm migration:create -- -n createClass
+yarn run v1.22.10
+warning From Yarn 1.0 onwards, scripts don't require "--" for options to be forwarded. In a future version, any explicit "--" will be forwarded as-is to the scripts.
+$ ts-node-dev ./node_modules/typeorm/cli.js migration:create -n createClass
+[INFO] 11:40:54 ts-node-dev ver. 1.1.6 (using ts-node ver. 9.1.1, typescript ver. 3.3.3333)
+Migration /home/moacir/workspace/quicktypeorm/src/database/migration/1616856058841-createClass.ts has been generated successfully.
+
+/* EXECUTAR MIGRAÇÕES NO BANCO */
+$ yarn typeorm migration:run
+yarn run v1.22.10
+$ ts-node-dev ./node_modules/typeorm/cli.js migration:run
+[INFO] 11:30:26 ts-node-dev ver. 1.1.6 (using ts-node ver. 9.1.1, typescript ver. 3.3.3333)
+Deprecated as of 10.7.0. highlight(lang, code, ...args) has been deprecated.
+Deprecated as of 10.7.0. Please use highlight(code, options) instead.
+https://github.com/highlightjs/highlight.js/issues/2277
+query: SELECT * FROM "information_schema"."tables" WHERE "table_schema" = current_schema() AND "table_name" = 'migrations'
+Deprecated as of 10.7.0. highlight(lang, code, ...args) has been deprecated.
+Deprecated as of 10.7.0. Please use highlight(code, options) instead.
+https://github.com/highlightjs/highlight.js/issues/2277
+query: CREATE TABLE "migrations" ("id" SERIAL NOT NULL, "timestamp" bigint NOT NULL, "name" character varying NOT NULL, CONSTRAINT "PK_8c82d7f526340ab734260ea46be" PRIMARY KEY ("id"))
+Deprecated as of 10.7.0. highlight(lang, code, ...args) has been deprecated.
+Deprecated as of 10.7.0. Please use highlight(code, options) instead.
+https://github.com/highlightjs/highlight.js/issues/2277
+query: SELECT * FROM "migrations" "migrations"  ORDER BY "id" DESC
+No migrations are pending
+Done in 12.31s.
+
+/* OBTER MIGRAÇÃO A PARTIR DAS ENTIDADES */
+typeorm migration:generate -- -n UserMigration
+The rule of thumb is to generate a migration after each entity change.
+
+$ yarn typeorm migration:show
+$ yarn typeorm migration:revert
+$ yarn typeorm query "SELECT * FROM class"

@@ -1,0 +1,23 @@
+{
+   "name": "quicktypeorm",
+   "version": "0.0.1",
+   "license": "GPL-3.0-or-later",
+   "description": "Awesome project developed with TypeORM.",
+   "devDependencies": {
+      "@types/express": "^4.17.11",
+      "@types/node": "^8.0.29",
+      "ts-node-dev": "^1.1.6",
+      "typescript": "3.3.3333"
+   },
+   "dependencies": {
+      "express": "^4.17.1",
+      "express-async-errors": "^3.1.1",
+      "pg": "^8.5.1",
+      "reflect-metadata": "^0.1.10",
+      "typeorm": "0.2.31"
+   },
+   "scripts": {
+      "serve": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts",
+      "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
+   }
+}

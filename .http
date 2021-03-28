@@ -1,0 +1,55 @@
+###
+
+POST http://localhost:3131/class/create
+Content-Type: application/json
+
+{
+  "name": "Matematica",
+  "duration": "30"
+}
+
+###
+
+GET http://localhost:3131/class/
+
+###
+
+GET http://localhost:3131/class/Matematica
+
+###
+
+GET http://localhost:3131/class?duration=40
+
+###
+
+POST http://localhost:3131/student/create
+Content-Type: application/json
+
+{
+  "name": "Moacir",
+  "key": "abcd"
+}
+
+###
+
+GET http://localhost:3131/student/
+
+###
+
+POST http://localhost:3131/lesson/create
+Content-Type: application/json
+
+{
+  "description": "Atividade 1",
+  "classe":  {
+      "id": "861f4e7d-4413-4477-a72d-3cc15e4e65b6",
+      "name": "Citologia",
+      "duration": 40
+    }
+}
+
+###
+
+GET http://localhost:3131/lesson/
+
+###
