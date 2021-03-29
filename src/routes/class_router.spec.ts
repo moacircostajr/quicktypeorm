@@ -7,7 +7,7 @@ describe('Class Route', () => {
     await createConnection()
   })
 
-  test('if it can create a Class', async () => {
+  it('should can create a Class', async () => {
     const result = await request(app)
       .post('/class/create')
       .send({
