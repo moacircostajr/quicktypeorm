@@ -1,10 +1,17 @@
-import { Column, CreateDateColumn, Entity, ManyToOne, OneToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
-import Class from "./Class";
-import Content from "./Content";
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  ManyToOne,
+  OneToOne,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn
+} from 'typeorm'
+import Class from './class'
+import Content from './content'
 
 @Entity('lessons')
 export default class Lesson {
-
   @PrimaryGeneratedColumn('uuid')
   id: string
 

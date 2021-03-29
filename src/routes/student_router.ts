@@ -1,9 +1,9 @@
-import { Router } from "express"
-import CoreStudent from "../core/CoreStudent"
-import Student from "../database/entity/Student"
-import Factory from "../factory"
+import { Router } from 'express'
+import CoreStudent from '../core/core_student'
+import Student from '../database/entity/student'
+import Factory from '../factory'
 import 'express-async-errors'
-import { errorHandler } from "../middlewares/error"
+import { errorHandler } from '../middlewares/error'
 
 const studentRouter = Router()
 
@@ -17,9 +17,7 @@ studentRouter.post('/create', async (request, response) => {
     return errorHandler(result, request, response, null)
   }
   return response.status(201).json(result)
-
 })
-
 
 studentRouter.get('/', async (request, response) => {
   const result = await coreStudent.list()
@@ -28,8 +26,6 @@ studentRouter.get('/', async (request, response) => {
     return errorHandler(result, request, response, null)
   }
   return response.status(200).json(result)
-
 })
-
 
 export default studentRouter

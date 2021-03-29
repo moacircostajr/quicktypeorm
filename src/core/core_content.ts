@@ -1,9 +1,8 @@
-import { getRepository } from "typeorm";
-import Content from "../database/entity/Content";
-import { catchCoreError } from "../middlewares/error";
+import { getRepository } from 'typeorm'
+import Content from '../database/entity/content'
+import { catchCoreError } from '../middlewares/error'
 
 export default class CoreContent {
-
   public async create(newContent: Content) {
     const repo = getRepository(Content)
     return await catchCoreError(() => repo.save(newContent))
@@ -13,5 +12,4 @@ export default class CoreContent {
     const repo = getRepository(Content)
     return await catchCoreError(() => repo.find())
   }
-
 }

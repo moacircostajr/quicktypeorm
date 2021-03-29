@@ -1,7 +1,7 @@
-import CoreClass from "./core/CoreClass";
-import CoreContent from "./core/CoreContent";
-import CoreLesson from "./core/CoreLesson";
-import CoreStudent from "./core/CoreStudent";
+import CoreClass from './core/core_class'
+import CoreContent from './core/core_content'
+import CoreLesson from './core/core_lesson'
+import CoreStudent from './core/core_student'
 
 function getNewCoreClass(): CoreClass {
   return new CoreClass()

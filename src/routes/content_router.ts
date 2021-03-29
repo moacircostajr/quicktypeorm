@@ -1,9 +1,9 @@
-import { Router } from "express";
-import Factory from "../factory";
+import { Router } from 'express'
+import Factory from '../factory'
 import 'express-async-errors'
-import { errorHandler } from "../middlewares/error";
-import CoreContent from "../core/CoreContent";
-import Content from "../database/entity/Content";
+import { errorHandler } from '../middlewares/error'
+import CoreContent from '../core/core_content'
+import Content from '../database/entity/content'
 
 const contentRouter = Router()
 
@@ -17,7 +17,6 @@ contentRouter.post('/create', async (request, response) => {
     return errorHandler(result, request, response, null)
   }
   return response.status(201).json(result)
-
 })
 
 contentRouter.get('/', async (request, response) => {
@@ -27,7 +26,6 @@ contentRouter.get('/', async (request, response) => {
     return errorHandler(result, request, response, null)
   }
   return response.status(200).json(result)
-
 })
 
 export default contentRouter

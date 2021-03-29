@@ -1,9 +1,16 @@
-import { Column, CreateDateColumn, Entity, ManyToMany, PrimaryColumn, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
-import Class from "./Class";
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  ManyToMany,
+  PrimaryColumn,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn
+} from 'typeorm'
+import Class from './class'
 
 @Entity('students')
 export default class Student {
-
   @PrimaryGeneratedColumn('uuid')
   id: string
 

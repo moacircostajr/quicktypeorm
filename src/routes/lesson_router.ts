@@ -1,9 +1,9 @@
-import { Router } from "express";
-import Factory from "../factory";
+import { Router } from 'express'
+import Factory from '../factory'
 import 'express-async-errors'
-import { errorHandler } from "../middlewares/error";
-import CoreLesson from "../core/CoreLesson";
-import Lesson from "../database/entity/Lesson";
+import { errorHandler } from '../middlewares/error'
+import CoreLesson from '../core/core_lesson'
+import Lesson from '../database/entity/lesson'
 
 const lessonRouter = Router()
 
@@ -17,9 +17,7 @@ lessonRouter.post('/create', async (request, response) => {
     return errorHandler(result, request, response, null)
   }
   return response.status(201).json(result)
-
 })
-
 
 lessonRouter.get('/', async (request, response) => {
   const result = await coreLesson.list()
@@ -28,7 +26,6 @@ lessonRouter.get('/', async (request, response) => {
     return errorHandler(result, request, response, null)
   }
   return response.status(200).json(result)
-
 })
 
 export default lessonRouter
