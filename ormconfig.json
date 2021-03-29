@@ -1,20 +1,11 @@
 {
-   "type": "postgres",
-   "host": "localhost",
-   "port": 5432,
-   "username": "postgres",
-   "password": "postgres",
-   "database": "oni",
-   "synchronize": false,
-   "logging": false,
-   "entities": [
-      "src/database/entity/**/*.ts"
-   ],
-   "migrations": [
-      "src/database/migration/**/*.ts"
-   ],
-   "cli": {
-      "entitiesDir": "src/database/entity",
-      "migrationsDir": "src/database/migration"
-   }
+  "name": "default",
+  "type": "sqlite",
+  "database": "src/database/database.sqlite",
+  "entities": ["src/database/entity/**/*.ts"],
+  "migrations": ["src/database/migration/**/*.ts"],
+  "cli": {
+    "entitiesDir": "src/database/entity",
+    "migrationsDir": "src/database/migration"
+  }
 }

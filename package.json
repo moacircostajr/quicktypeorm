@@ -20,6 +20,7 @@
     "express-async-errors": "^3.1.1",
     "pg": "^8.5.1",
     "reflect-metadata": "^0.1.10",
+    "sqlite3": "^5.0.2",
     "typeorm": "0.2.31"
   },
   "scripts": {
@@ -27,5 +28,5 @@
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
     "test": "jest --runInBand --onlyChanged  --passWithNoTests",
     "test:all": "jest --runInBand  --passWithNoTests"
-  }
+
 }

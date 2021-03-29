@@ -60,3 +60,22 @@ The rule of thumb is to generate a migration after each entity change.
 $ yarn typeorm migration:show
 $ yarn typeorm migration:revert
 $ yarn typeorm query "SELECT * FROM class"
+
+
+{
+    "name": "default",
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "postgres",
+    "password": "postgres",
+    "database": "oni",
+    "synchronize": false,
+    "logging": false,
+    "entities": ["src/database/entity/**/*.ts"],
+    "migrations": ["src/database/migration/**/*.ts"],
+    "cli": {
+      "entitiesDir": "src/database/entity",
+      "migrationsDir": "src/database/migration"
+    }
+
